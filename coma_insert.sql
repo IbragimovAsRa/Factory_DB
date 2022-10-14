@@ -1,9 +1,5 @@
 use factory;
 
-
-create schema ff;
-
-
 insert into orders
 values (1, '2022-01-1', 'Tom', '200000', '10000'),
        (2, '2022-01-19', 'Ivan', '500000', '15000'),
@@ -24,13 +20,21 @@ values (1, 'Chipboard', 220),
 
 
 insert into equpment
-values (1, 'Format-cutting machines', 12, 4, 1, 24),
-       (2, 'Edge-banding machines', 24, 3, 1, 24),
-       (3, 'Drilling and priming machines', 12, 1, 1, 24),
-       (4, 'Glass processing machines', 12, 11, 1, 24),
-       (5, 'CNC Milling machines', 24, 10, 1, 24),
-       (6, 'Glue-bearing machines', 12, 16, 1, 24),
-       (7, 'Laser engraving machines', 24, 9, 1, 24);
+values (1, 'Format-cutting machines', 12, 4,24000, 16000, 200000),
+       (2, 'Edge-banding machines', 24, 3, 24000, 13000, 400000),
+       (3, 'Drilling and priming machines', 12, 1, 24000, 17000, 700000),
+       (4, 'Glass processing machines', 12, 11, 24000, 5000, 900000),
+       (5, 'CNC Milling machines', 24, 10, 24000, 8000, 800000),
+       (6, 'Glue-bearing machines', 12, 16, 24000, 1000, 400000),
+       (7, 'Laser engraving machines', 24, 9, 24000, 12000, 300000);
+
+insert into product
+values (1, 'Upholstered furniture', 1),
+       (2, 'Wardrobe', 2),
+       (3, 'Bedroom furniture', 3),
+       (4, 'Living room furniture', 1),
+       (5, 'Kitchen furniture', 1),
+       (6, 'Office furniture', 2);
 
 insert into orders_has_product
 values
@@ -67,13 +71,6 @@ values
        (7, 4),
        (7, 2);
 
-insert into product
-values (1, 'Upholstered furniture', 1),
-       (2, 'Wardrobe', 2),
-       (3, 'Bedroom furniture', 3),
-       (4, 'Living room furniture', 1),
-       (5, 'Kitchen furniture', 1),
-       (6, 'Office furniture', 2);
 
 -- Какие материалы нужны для производства единицы мебели
 insert into product_has_materials
@@ -100,33 +97,33 @@ values (1, 2, 5),
        (6, 6, 13);
 
 insert into product_to_equpment
-values (1, 1),
-       (1, 2),
-       (1, 3),
-       (1, 4),
+values (1, 1, 2),
+       (1, 2, 1),
+       (1, 3, 3),
+       (1, 4, 4),
 
-       (2, 2),
-       (2, 4),
-       (2, 5),
+       (2, 2, 9),
+       (2, 4, 7),
+       (2, 5, 5),
 
-       (3, 5),
-       (3, 6),
-       (3, 7),
-       (3, 2),
-       (3, 3),
-       (3, 4),
+       (3, 5, 3),
+       (3, 6, 4),
+       (3, 7, 2),
+       (3, 2, 8),
+       (3, 3, 2),
+       (3, 4, 3),
 
-       (4, 6),
-       (4, 4),
+       (4, 6, 3),
+       (4, 4, 1),
 
-       (5, 6),
-       (5, 5),
-       (5, 2),
-       (5, 1),
+       (5, 6, 4),
+       (5, 5, 2),
+       (5, 2, 2),
+       (5, 1, 1),
 
-       (6, 1),
-       (6, 2),
-       (6, 3);
+       (6, 1, 1),
+       (6, 2, 3),
+       (6, 3, 2);
 
 
 
