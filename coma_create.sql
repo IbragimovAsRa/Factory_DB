@@ -24,8 +24,9 @@ CREATE TABLE IF NOT EXISTS `factory`.`equpment` (
   `equpment_name` VARCHAR(45) NULL,
   `guaranty_period(months)` INT NULL,
   `period_of_exploitation(months)` INT NULL,
-  `operation_execution_time(hours)` INT NULL,
-  `work_resource(months)` INT NULL,
+  `work_resource(hours)` INT NULL,
+  `exploitation_resource(hours)` INT NULL,
+  `equpment_price` INT NULL,
   PRIMARY KEY (`id_equpment`))
 ENGINE = InnoDB;
 
@@ -36,6 +37,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `factory`.`product_to_equpment` (
   `product_id_product` INT NOT NULL,
   `equpment_id_equpment` INT NOT NULL,
+  `operation_execution_time(hours)` INT NOT NULL,
   PRIMARY KEY (`product_id_product`, `equpment_id_equpment`),
   INDEX `fk_product_to_equpment_product_idx` (`product_id_product` ASC) VISIBLE,
   INDEX `fk_product_to_equpment_equpment1_idx` (`equpment_id_equpment` ASC) VISIBLE,
