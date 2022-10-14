@@ -1,3 +1,4 @@
 # FactoryDB
 Furniture factory database
-![Иллюстрация к проекту](https://github.com/IbragimovAsRa/FactoryDB/tree/main/img/database_structure.png)
+![github-small](https://github.com/IbragimovAsRa/FactoryDB/blob/develop/img/database_structure.png)
+
