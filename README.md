@@ -18,4 +18,12 @@ Description
 - coma_request.sql
 (код sql запросов к БД (пока без cte))
 
+### API
 
+| Method name | Path | Description |
+| ----------- | ---- | ----------- |
+
+| GET | /orders/ | Получить все заказы |
+| GET | /orders/{id} | Получить заказ по id |
+| GET | /materials/ | Получить все материалы |
+| GET | /materials/{id} | Получить материал по id |
