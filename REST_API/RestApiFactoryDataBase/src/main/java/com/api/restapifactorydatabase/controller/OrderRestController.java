@@ -21,7 +21,7 @@ public class OrderRestController {
         this.orderService = orderService;
     }
     @GetMapping(value = "{id}")
-    public Order getOrderById(@PathVariable(name = "id") Integer id) {
+    public Order getOrderById(@PathVariable(name = "id") Long id) {
         return orderService.getById(id);
 
     }

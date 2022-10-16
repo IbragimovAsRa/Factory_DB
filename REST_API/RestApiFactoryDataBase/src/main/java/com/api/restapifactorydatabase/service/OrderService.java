@@ -5,6 +5,6 @@ import com.api.restapifactorydatabase.model.Order;
 import java.util.List;
 
 public interface OrderService {
-    Order getById(Integer id);
+    Order getById(Long id);
     List<Order> getAll();
 }
