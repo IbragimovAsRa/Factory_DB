@@ -11,7 +11,7 @@ USE `factory` ;
 CREATE TABLE IF NOT EXISTS `factory`.`product` (
   `id_product` INT NOT NULL AUTO_INCREMENT,
   `product_name` VARCHAR(45) NULL,
-  `production_time(hours)` INT NULL,
+  `production_time` INT NULL,
   PRIMARY KEY (`id_product`))
 ENGINE = InnoDB;
 

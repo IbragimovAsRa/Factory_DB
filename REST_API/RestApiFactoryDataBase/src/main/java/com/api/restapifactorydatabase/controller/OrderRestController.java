@@ -29,7 +29,7 @@ public class OrderRestController {
         return orderService.getAll();
     }
     @PostMapping(value = "",consumes="application/json")
-    public ResponseEntity saveOrders(@RequestBody Order order) {
+    public ResponseEntity saveOrder(@RequestBody Order order) {
         orderService.save(order);
         return  ResponseEntity.ok(HttpStatus.OK);
     }
