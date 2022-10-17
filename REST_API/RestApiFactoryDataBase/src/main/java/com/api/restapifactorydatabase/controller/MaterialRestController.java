@@ -3,10 +3,9 @@ package com.api.restapifactorydatabase.controller;
 import com.api.restapifactorydatabase.model.Material;
 import com.api.restapifactorydatabase.service.MaterialService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,12 +19,26 @@ public class MaterialRestController {
         this.materialService = materialService;
     }
 
-    @GetMapping("")
+    @GetMapping(path ="")
     public List<Material> getAllMaterials() {
+
         return materialService.getAll();
     }
-    @GetMapping("{id}")
+    @GetMapping(path = "{id}")
     public Material getMaterialById(@PathVariable(name = "id") Long id) {
         return materialService.getById(id);
     }
+    @PostMapping(path = "",consumes="application/json")
+    public ResponseEntity saveMaterial(@RequestBody Material material) {
+        System.out.println(material.toString());
+        materialService.save(material);
+        return  ResponseEntity.ok(HttpStatus.OK);
+    }
+    @DeleteMapping(path = "{id}")
+    public ResponseEntity deleteMaterial(@PathVariable(name = "id") Long id) {
+        materialService.delete(id);
+        return  ResponseEntity.ok(HttpStatus.OK);
+    }
+
 }
+

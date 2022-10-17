@@ -71,7 +71,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`materials`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `factory`.`materials` (
-  `id_materials` INT NOT NULL,
+  `id_materials` INT NOT NULL AUTO_INCREMENT,
   `material_name` VARCHAR(45) NULL,
   `unit_price` INT NULL,
   PRIMARY KEY (`id_materials`))

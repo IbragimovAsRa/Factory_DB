@@ -5,10 +5,9 @@ import com.api.restapifactorydatabase.model.Order;
 import com.api.restapifactorydatabase.service.Impl.OrderServiceImpl;
 import com.api.restapifactorydatabase.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +27,11 @@ public class OrderRestController {
     @GetMapping(value = "")
     public List<Order> getAllOrders() {
         return orderService.getAll();
+    }
+    @PostMapping(value = "",consumes="application/json")
+    public ResponseEntity saveOrders(@RequestBody Order order) {
+        orderService.save(order);
+        return  ResponseEntity.ok(HttpStatus.OK);
     }
 
 }

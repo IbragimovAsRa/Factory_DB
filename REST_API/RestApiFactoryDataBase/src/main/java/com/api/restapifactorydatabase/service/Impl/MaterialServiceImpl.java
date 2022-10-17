@@ -29,4 +29,12 @@ public class MaterialServiceImpl implements MaterialService {
         List<Material> result = materialRepository.findAll();
         return result;
     }
+
+    @Override
+    public Material save(Material material) {
+        return materialRepository.save(material);
+    }
+    @Override
+    public void delete(Long id) { materialRepository.deleteById(id);}
+
 }

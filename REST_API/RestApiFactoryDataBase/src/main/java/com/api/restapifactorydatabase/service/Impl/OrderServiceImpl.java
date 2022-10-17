@@ -1,5 +1,6 @@
 package com.api.restapifactorydatabase.service.Impl;
 
+import com.api.restapifactorydatabase.model.Material;
 import com.api.restapifactorydatabase.model.Order;
 import com.api.restapifactorydatabase.repository.OrderRepository;
 import com.api.restapifactorydatabase.service.OrderService;
@@ -34,5 +35,9 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> getAll() {
         List<Order> result = orderRepository.findAll();
         return result;
+    }
+    @Override
+    public Order save(Order order) {
+        return orderRepository.save(order);
     }
 }
