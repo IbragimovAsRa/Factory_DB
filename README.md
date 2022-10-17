@@ -25,4 +25,13 @@ Description
 | GET | /orders/ | Получить все заказы |
 | GET | /orders/{id} | Получить заказ по id |
 | GET | /materials/ | Получить все материалы |
-| GET | /materials/{id} | Получить материал по id 
+| GET | /materials/{id} | Получить материал по id | 
+| GET | /products/ | Получить все изделия |
+| GET | /products/{id} | Получить изделие по id |
+| POST | /materials/ | Добавить новый материал |
+| POST | /products/ | Добавить новое изделие|
+| POST | /orders/ | Добавить новый заказ|
+| DELETE | /products/{id} | Удалить изделие по его id|
+| DELETE | /materials/{id} | Удалить материал по его id|
+| DELETE | /orders/{id} | Удалить заказ по его id|
+
