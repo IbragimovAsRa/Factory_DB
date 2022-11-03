@@ -7,8 +7,13 @@
   <name>Archetype - ConsoleApp</name>
   <url>http://maven.apache.org</url>
 
-  <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring -->
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+<dependencies>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring</artifactId>
@@ -19,7 +24,7 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>8.0.28</version>
+      <version>8.0.30</version>
     </dependency>
 
   </dependencies>
