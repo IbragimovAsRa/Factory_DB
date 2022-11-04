@@ -1,6 +1,7 @@
 package repository.impl;
 
 import entity.Order;
+import entity.Product;
 import repository.OrderRepository;
 
 import java.sql.*;
@@ -10,6 +11,7 @@ import java.util.List;
 
 public class OrderRepositoryImpl implements OrderRepository {
     Connection connection;
+
     public OrderRepositoryImpl(Connection connection) {
         this.connection = connection;
     }
@@ -48,5 +50,22 @@ public class OrderRepositoryImpl implements OrderRepository {
         resultSet.close();
 
         return orders;
+    }
+
+    @Override
+    public List<Product> getProductForOrder(int orderId) throws SQLException {
+        ArrayList<Product> products = new ArrayList<Product>();
+        PreparedStatement preparedStatement = connection.prepareStatement("select product_name from orders_has_product left join product p on orders_has_product.product_id_product = p.id_product where orders_id_orders = ?");
+        preparedStatement.setInt(1, orderId);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()) {
+            Product product = new Product();
+            product.setProduct_name(resultSet.getString(1));
+            products.add(product);
+        }
+        resultSet.close();
+        return products;
+
     }
 }

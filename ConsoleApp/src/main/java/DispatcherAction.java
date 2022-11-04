@@ -1,25 +1,47 @@
 import dataBase.DataBase;
+import entity.Product;
 import repository.impl.OrderRepositoryImpl;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class DispatcherAction {
     public static void doSelectedRequestToOrders(int action) throws SQLException, ReflectiveOperationException, IOException{
         DataBase dataBase = new DataBase();
         Connection connection = dataBase.getConnection();
         OrderRepositoryImpl orderRepository = new OrderRepositoryImpl(connection);
-
+        Scanner scanner = new Scanner(System.in);
         switch (action) {
             case 1:
                 break;
             case 2:
                 break;
             case 3:
+                System.out.print("\033[H\033[J");
+                int scan;
+                int orderId;
+                System.out.println("Введите id заказа, для получения информации:\n");
+                orderId = scanner.nextInt();
+                System.out.print("\033[H\033[J");
+                ArrayList<Product> products = (ArrayList<Product>) orderRepository.getProductForOrder(orderId);
+                for (int i = 0; i < products.size(); i ++) {
+                    System.out.println(" " + (i + 1) + ".  " + products.get(i).getProduct_name());
+                }
+                System.out.println("                              Вернуться в меню заказов (666) \n");
+                scan = scanner.nextInt();
+                if (scan == 666) {
+                    doSelected(1);
+                }
                 break;
             case 4:
                 System.out.println(orderRepository.getAll());
+                System.out.println("\n\n\n                              Вернуться в меню заказов (666) \n");
+                if (scanner.nextInt() == 666) {
+                    doSelected(1);
+                }
                 break;
         }
 
@@ -28,19 +50,15 @@ public class DispatcherAction {
     public static void doSelected(int select) throws IOException, ReflectiveOperationException, SQLException {
         switch (select) {
             case 1:
-                System.out.println("Ваш выбор 1");
                 Console.show(Entity.ORDER);
                 break;
             case 2:
-                System.out.println("Ваш выбор 2");
                 Console.show(Entity.PRODUCT);
                 break;
             case 3:
-                System.out.println("Ваш выбор 3");
                 Console.show(Entity.EQUIPMENT);
                 break;
             case 4:
-                System.out.println("Ваш выбор 4");
                 Console.show(Entity.MATERIAL);
                 break;
             case 5:
