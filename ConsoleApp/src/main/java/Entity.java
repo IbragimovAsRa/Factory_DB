@@ -1,6 +1,6 @@
 public enum Entity {
     ORDER,
     MATERIAL,
-    EQUPMENT,
+    EQUIPMENT,
     PRODUCT
 }

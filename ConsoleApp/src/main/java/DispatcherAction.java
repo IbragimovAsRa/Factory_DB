@@ -13,7 +13,7 @@ public class DispatcherAction {
                 break;
             case 3:
                 System.out.println("Ваш выбор 3");
-                Console.show(Entity.EQUPMENT);
+                Console.show(Entity.EQUIPMENT);
                 break;
             case 4:
                 System.out.println("Ваш выбор 4");

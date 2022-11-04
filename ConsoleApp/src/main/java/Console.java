@@ -33,7 +33,7 @@ public class Console {
                 System.out.print("1. Список производимых изделий" +
                         "2. Какаие материалы нужны для производства этого изделияe");
                 break;
-            case EQUPMENT:
+            case EQUIPMENT:
                 break;
             case MATERIAL:
                 break;
