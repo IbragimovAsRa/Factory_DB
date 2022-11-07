@@ -17,4 +17,6 @@ public interface OrderRepository {
     // Какие изделия нужно изготовить для выполнения заказа n
     List<Product>  getProductForOrder(int orderId) throws SQLException;
 
+    String getAmountMaterialsForOrder(int orderId) throws SQLException;
+    double getProfitForOrder(int orderId) throws SQLException;
 }

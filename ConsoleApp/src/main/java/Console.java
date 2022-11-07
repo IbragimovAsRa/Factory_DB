@@ -13,9 +13,9 @@ public class Console {
                 "2. Прибыль от заказов (стоимость материалов - стоимость заказа - стоимость доставки)\n" +
                 "3. Какие изделия нужно изготовить для выполнения заказа n\n" +
                 "4. Информация о всех заказах\n\n\n" +
-                "                               Вернуться в главное меню (666)\n");
+                "                               Вернуться в главное меню (6)\n");
         action = scanner.nextInt();
-        if (action == 666) {
+        if (action == 6) {
             DispatcherAction.doSelected(Console.showMenu());
         } else if (action == 1 || action == 2 || action == 3 || action == 4) {
             DispatcherAction.doSelectedRequestToOrders(action);
@@ -39,9 +39,7 @@ public class Console {
                 "1. Заказы\n" +
                 "2. Изделения\n" +
                 "3. Оборудование\n" +
-                "4. Материалы\n" +
-                "5. Другое\n"
-        );
+                "4. Материалы\n" );
         action = scaner.nextInt();
         System.out.println(action);
         return action;

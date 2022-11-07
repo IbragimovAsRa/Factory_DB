@@ -27,7 +27,7 @@ public class Main {
         DataBase dataBase = new DataBase();
         Connection connection = dataBase.getConnection();
         OrderRepositoryImpl orderRepository = new OrderRepositoryImpl(connection);
-        dataBase.closeConnection();
+     //   dataBase.closeConnection();
         // -----------------------------------------------------------------------------
         DispatcherAction.doSelected(Console.showMenu());
 
