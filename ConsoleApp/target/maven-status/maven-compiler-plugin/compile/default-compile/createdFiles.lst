@@ -1,5 +1,7 @@
 dataBase/DataBase.class
 repository/impl/OrderRepositoryImpl.class
+repository/impl/EquipmentRepositoryImpl.class
+repository/impl/ProductRepositoryImpl.class
 repository/OrderRepository.class
 repository/MaterialRepository.class
 entity/Material.class
@@ -11,5 +13,6 @@ Console.class
 Console$1.class
 entity/Product.class
 DispatcherAction.class
+repository/impl/MaterialRepositoryImpl.class
 entity/Order.class
 entity/Equipment.class

@@ -38,4 +38,11 @@ public class Product {
         return production_time;
     }
 
+    @Override
+    public String toString() {
+        return "\n\n" +
+                "id_product = " + id_product +
+                ", product_name = '" + product_name + '\'' +
+                ", production_time = " + production_time;
+    }
 }

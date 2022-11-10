@@ -34,4 +34,13 @@ public class Material {
     public void setUnit_price(int unit_price) {
         this.unit_price = unit_price;
     }
+
+    @Override
+    public String toString() {
+        return '\n'  +
+                "  id_materials = " + id_materials +
+                "  material_name = " + material_name + '\'' +
+                "  unit_price = " + unit_price
+                  ;
+    }
 }

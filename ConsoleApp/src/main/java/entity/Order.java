@@ -22,7 +22,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return '\n' +"Order {" +
+        return '\n' + "Order {" +
                 "id_orders = " + id_orders +
                 "  order_date = " + order_date +
                 "  manager = '" + manager + '\'' +

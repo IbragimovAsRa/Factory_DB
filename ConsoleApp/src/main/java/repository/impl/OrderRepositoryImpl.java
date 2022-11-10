@@ -15,7 +15,6 @@ public class OrderRepositoryImpl implements OrderRepository {
     public OrderRepositoryImpl(Connection connection) {
         this.connection = connection;
     }
-
     @Override
     public Order getById(int id) throws SQLException {
         Order order = new Order();
